@@ -2,7 +2,7 @@ import os
 import datetime
 import shutil
 
-dir = 'C:\\Users\Jan-Intel\Desktop'
+dir = 'C://Users/Jan-Intel/Desktop'
 os.chdir(dir)
 
 def casovnaRazlika(info):
@@ -21,21 +21,21 @@ def tipDatoteke(name):
     besedila = ['txt']
     koda = ['php', 'htm', 'html', 'js', 'css', 'sql', 'cpp', 'c']
 
-    startDir = dir + '\\' + fullName
+    startDir = dir + '/' + fullName
     endDir = ""
 
     if name in slike:
         print(name + ' slika')
-        endDir = dir + '\\Slike\\' + fullName
+        endDir = dir + '/Slike/' + fullName
     elif name in dokumenti:
         print(name + ' dokument')
-        endDir = dir + '\\Dokumenti\\' + fullName
+        endDir = dir + '/Dokumenti/' + fullName
     elif name in besedila:
         print(name + ' besedilo')
-        endDir = dir + '\\Besedila\\' + fullName
+        endDir = dir + '/Besedila/' + fullName
     elif name in koda:
         print(name + ' koda')
-        endDir = dir + '\\Koda\\' + fullName
+        endDir = dir + '/Koda/' + fullName
     else:
         print(name + ' ni ustrezen')
     
@@ -47,7 +47,4 @@ def preberiDatoteke():
         info = entry.stat()
         if casovnaRazlika(info.st_mtime) > 7:
             tipDatoteke(entry.name)
-
 preberiDatoteke()
-# shutil.move(dir + '\Vaje_seznami_1.del.docx', dir + '\Dokumenti\Vaje_seznami_1.del.docx')
-# os.close()
